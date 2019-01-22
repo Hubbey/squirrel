@@ -15,6 +15,7 @@
 int main(int argc, char** argv) {
     
     _hubbey_divide();
+    _hubbey_randomize();
     
     printf("-------- welcome to the squirrel --------\n-------- programmed by hubbey -----------\n");
     printf("--                                     --\n");

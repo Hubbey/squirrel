@@ -102,37 +102,36 @@ int checkup(char inUser[LENGTH_UNAME], char inPass[LENGTH_PW]){
 
 void _hubbey_divide(){
     FILE* sourceFile;
+    FILE* library;
     if((sourceFile = fopen("accounts.txt", "r")) == NULL){
         printf("A problem has accoured while loading files.");
     }
-    int satir = -1;
-    while(!feof(sourceFile)){
-        satir++;
-        char userInfo1[LENGTH_UNAME];
-        char passInfo1[LENGTH_PW];
-        fscanf(sourceFile, "%s", userInfo1);
-        fscanf(sourceFile, "%s", passInfo1);
-        char row;
-        switch(satir){
-            case 0:
-                row = 'a';
-                break;
-            case 1:
-                row = 'b';
-                break;
-            case 2:
-                row = 'c';
-                break;
-            case 3:
-                row = 'd';
-                break;
-            default:
-                row = '0';
-                break;
-        }
-       
+    if((library = fopen("library.txt", "w")) == NULL){
+        printf("A problem has accoured while loading files.");
     }
+   
+    int numberofColumns = 2; // accounts dosyasındaki sütun sayısı 
+    _hucre eleman;
+    eleman._satir = 64; // A'dan önceki karakterin ASCII değeri
+    eleman._sutun;
+    
+    while(!feof(sourceFile)){
+        eleman._satir++;
+        for(eleman._sutun = 0; eleman._sutun < numberofColumns; eleman._sutun++){
+            char deger[LENGTH_PW];
+            fscanf(sourceFile,"%s ", deger);
+            strcpy(eleman._deger, deger);
+            fprintf(library, "%d |  %d |  %s\n", eleman._satir, eleman._sutun, eleman._deger);
+        }
+    }
+    fclose(sourceFile);
+    fclose(library);
 }
+
+void _hubbey_randomize(){
+    
+}
+
 
 void delay(int seconds){
     int ms = 1000 * seconds;

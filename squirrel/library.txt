@@ -1,0 +1,6 @@
+65 |  0 |  hubbey
+65 |  1 |  hubbeyinSifre
+66 |  0 |  ubey
+66 |  1 |  ubeyinSifre
+67 |  0 |  yunus
+67 |  1 |  yunusunSifre

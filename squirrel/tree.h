@@ -16,6 +16,15 @@ int checkup(char*, char*);
 void delay(int);
 void successful_login(char*, char*);
 void _hubbey_divide();
+void _hubbey_randomize();
+
+typedef struct {
+  
+    int _satir;
+    int _sutun;
+    char _deger[50];
+       
+}_hucre;
 
 #endif /* TREE_H */
 
