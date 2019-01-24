@@ -1,6 +1,4 @@
-65 |  0 |  hubbey
-65 |  1 |  hubbeyinSifre
-66 |  0 |  ubey
-66 |  1 |  ubeyinSifre
-67 |  0 |  yunus
-67 |  1 |  yunusunSifre
+65 |  0 |  admin
+65 |  1 |  123456
+66 |  0 |  hubbey
+66 |  1 |  456789

@@ -28,9 +28,15 @@ void registeR(){
     char userName[LENGTH_UNAME];
     char password[LENGTH_PW];
     char passwordCheck[LENGTH_PW];
+    int numberofUsers;
+    FILE* logOku;
+    FILE* logYaz;
     FILE* kayitDosyasi;
+    if((logOku = fopen("log.txt", "r")) == NULL){
+        printf("A trouble occurred while loading the files.");
+    }
     if((kayitDosyasi = fopen("accounts.txt","a+")) == NULL){
-        printf("A trouble accoured while loading the files.");
+        printf("A trouble occurred while loading the files.");
     }
     int dongudenCik = 0;
     
@@ -58,6 +64,15 @@ void registeR(){
        
     }
     fprintf(kayitDosyasi, "\n%s %s", userName, password);
+    fseek(logOku, 16, SEEK_SET);
+    fscanf(logOku,"%d", &numberofUsers);
+    numberofUsers++;
+    if((logYaz = fopen("log.txt", "w")) == NULL){
+        printf("A trouble occurred while loading the files");
+    }
+    fprintf(logYaz,"NumberofUsers = %d", numberofUsers);
+    fclose(logOku);
+    fclose(logYaz);
     fclose(kayitDosyasi);
     printf("You have registered successfully! You're being directed to main menu.\n");
     delay(3);
@@ -104,10 +119,10 @@ void _hubbey_divide(){
     FILE* sourceFile;
     FILE* library;
     if((sourceFile = fopen("accounts.txt", "r")) == NULL){
-        printf("A problem has accoured while loading files.");
+        printf("A problem has occurred while loading files.");
     }
     if((library = fopen("library.txt", "w")) == NULL){
-        printf("A problem has accoured while loading files.");
+        printf("A problem has occurred while loading files.");
     }
    
     int numberofColumns = 2; // accounts dosyasındaki sütun sayısı 
@@ -129,7 +144,14 @@ void _hubbey_divide(){
 }
 
 void _hubbey_randomize(){
-    
+    int numberofUsers;
+    FILE* log;
+    if((log = fopen("log.txt", "r")) == NULL){
+         printf("A problem has occurred while loading files.");
+    }
+    fseek(log, 16, SEEK_SET);
+    fscanf(log,"%d", &numberofUsers);
+    int rowNumber = numberofUsers * 2;
 }
 
 
