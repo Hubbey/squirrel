@@ -17,6 +17,8 @@ void delay(int);
 void successful_login(char*, char*);
 void _hubbey_divide();
 void _hubbey_randomize();
+void _readDirectoryTest();
+void admin_panel(char*);
 
 typedef struct {
   
